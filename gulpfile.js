@@ -40,6 +40,7 @@ gulp.task('less', function () {
   return gulp.src('src/less/**/*.less')
     .pipe(less())
     .pipe(concat('style.css'))
+    .pipe(cleanCSS())
     .pipe(gulp.dest('build/css'))
     .pipe(browserSync.reload({stream: true}));
 });
